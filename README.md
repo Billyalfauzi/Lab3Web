@@ -16,14 +16,14 @@
 </body>
 
 ## Beginning
-<p>Pertama kita aktifkan terlebih dahulu aplikasi xampp, jika manteman tidak atau belum meng install xampp silahlan download [Disini](https://www.apachefriends.org/download.html)</p>
+Buka terlebih dahulu aplikasi xampp
+- Pilih start untuk menyalakan server pada Apache & MySql, Lalu akses http://localhost/phpmyadmin/ untuk memeriksa halaman di browser
 
 ![xampp](img/ss1.png)
 
--Pilih start untuk menyalakan server pada Apache & MySql, jika sudah silahkan cek di browser klean http://localhost/phpmyadmin/
-
 ## Database
-Jika sudah mengakses phpmyadmin, selanjut nya kita buat database dengan cara klik menu 'sql' lalu kita buat tabel dengan memasukkan perintah berikut :
+Jika sudah masuk di phpmyadmin 
+- Buat Database dengan cara klik menu sql & buat tabel dengan memasukkan perintah berikut :
 
 ```sql
 USE latihan1;
@@ -37,19 +37,22 @@ CREATE TABLE data_barang(
     stok int(4) NOT NULL
 );
 ```
+- Seperti ini
+
 ![Membuat Database](img/ss2.png)
 
 ## Cukup Hati aja Yang Kosong Tabel Jangan
-Lalu selanjutnya menginsert/memasukkan data pada tabel yang telah dibuat dengan memasukkan perintah.
+Dilanjut dengan menginsert/memasukkan data pada tabel yang telah dibuat
+- Dengan memasukkan perintah berikut :
 
 ```sql
 INSERT INTO `data_barang` (`id_barang`, `nama_barang`, `kategori_barang`, `gambar_barang`, `harga_beli`, `harga_jual`, `stok`) VALUES (NULL, 'Komputer', 'Elektronik', 'gambar/komputer.jpg', '9500000', '9900000', '3'), (NULL, 'Kamera', 'Elektronik', 'gambar/kamera.jpg', '3400000', '3500000', '5');
 ```
 ![Insertdata](img/ss3.png)
 
-# Aplikasi CRUD
-- Buat folder baru terlebih dahulu (C:\xampp\htdocs)
-- Dilanjut dengan membuat file baru 'koneksi.php' dengan perintah :
+# Membuat Aplikasi CRUD
+Buat folder baru terlebih dahulu (C:\xampp\htdocs)
+- Dilanjut dengan membuat file baru 'koneksi.php' dengan memasukkan perintah berikut :
 
 ```php
 <?php
@@ -63,11 +66,12 @@ if ($koneksi == false) {
 // var_dump($koneksi);
 ```
 - Jika sudah terhubung maka gambarnya akan seperti ini
+
 ![koneksi](img/ss4.png)
 
 ## Membuat File Index
-- Untuk membaca data
-Dengan perintah berikut :
+File Index guna Untuk menampilkan data
+- Dengan memasukkan perintah berikut :
 
 ```php
 <?php
@@ -170,8 +174,8 @@ $result = mysqli_query($koneksi, $query);
 ```
 
 ## Membuat File Tambah
-- Untuk menambah/create data.
-Dengan perintah berikut :
+FIle Tambah Untuk menambah/create data.
+- Dengan memasukkan perintah berikut :
 
 ```html
 <!DOCTYPE html>
@@ -271,8 +275,8 @@ Dengan perintah berikut :
 </html>
 ```
 ## Buat File Proses
-- Untuk memproses semua data
-Dengan perintah berikut :
+File Proses berfungsi Untuk memproses semua data yang tlah dibuat
+- Dengan memasukkan perintah berikut :
 
 ```php
 <?php
@@ -341,6 +345,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ```
 ## Tampilan Aplikasi CRUD
 ![APK](img/ss5.png)
-- Done
+
+## Done :)
 
 # Panjang Umur Untuk Semua Hal-Hal Baik !
